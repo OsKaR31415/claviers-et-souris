@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    --nav-bg: #B8B4AE; /* bg color of the navbar */
+    --nav-item-bg: #A09B93; /* bg color of navbar items */
+    --nav-item-fg: darkslateblue;
+    --nav-item-hover-bg: #ACA79F; /* bg color of navbar items when hover */
+    --nav-item-hover-fg: slateblue;
+    --nav-item-active-bg: #C3C1BD; /* bg color of navbar items when clicked */
+    --nav-item-active-fg: #7362de;
+
+    --background: darkgrey;
+    --text-border: darkslateblue;
+    --text-bg: var(--nav-item-active-bg);
+
+    --vivid-col: darkslateblue;
+    --high-col: cadetblue;
+    --medium-col: darkcyan;
+    --low-col: steelblue;
+    --smooth-col: slategray;
+
+
+    background-color: var(--background);
+}
+
+body {
+    overflow: hidden; /* hide scrollbars */
+    margin: 0px;
+    display: flex;
+}
+
+/* ╺┳╸┏━╸╻ ╻╺┳╸   ┏━╸┏━┓┏┓╻╺┳╸┏━┓╻┏┓╻┏━╸┏━┓ *
+ *  ┃ ┣╸ ┏╋┛ ┃    ┃  ┃ ┃┃┗┫ ┃ ┣━┫┃┃┗┫┣╸ ┣┳┛ *
+ *  ╹ ┗━╸╹ ╹ ╹    ┗━╸┗━┛╹ ╹ ╹ ╹ ╹╹╹ ╹┗━╸╹┗╸ */
+
+.container {
+    flex-grow: 3;
+    flex-shrink: 4;
+    padding-top: 10vw;
+    margin-top: 20px;
+    display: inline-block;
+    font-family: "Lucida Console", "Courier", monospace;
+    font-size: 13pt;
+    background-color: var(--text-bg);
+}
+
+
+.contents {
+    margin: 2vw;
+    padding: 1vw;
+    border: 2px solid black;
+    border-radius: 0.7vw;
+}
+
+
+/* ⢹⠁ ⡇ ⢹⠁ ⡇  ⣏⡉ ⢎⡑ *
+ * ⠸  ⠇ ⠸  ⠧⠤ ⠧⠤ ⠢⠜ */
+
+h1 {
+    color: var(--vivid-col);
+    font-size: 50pt;
+}
+
+h2 {
+    color: var(--high-col);
+    font-size: 35pt;
+}
+
+h3 {
+    color: var(--medium-col);
+    font-size: 30pt;
+}
+
+h4 {
+    color: var(--low-col);
+    font-size: 25pt;
+}
+
+h5 {
+    color: var(--smooth-col);
+    font-size: 20pt;
+}
+
+h6 {
+    font-size: 15pt;
+}
+
+
+
+/* ┏━╸┏━┓┏━┓┏┳┓┏━┓ */
+/* ┣╸ ┃ ┃┣┳┛┃┃┃┗━┓ */
+/* ╹  ┗━┛╹┗╸╹ ╹┗━┛ */
+
+
+form {
+    display: block;
+    border: 2px solid black;
+    border-radius: 0.7vw;
+    padding: 1vw;
+    font-size: 20pt;
+}
+
+form > div.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+form > div.flex-container > div {
+
+}
+
+
+input.submit {
+    font-size: 20pt;
+    font-family: inherit;
+    padding: 0.3vw;
+    border-radius: 0.7vw;
+}
+
+/* ┏┓╻┏━┓╻ ╻┏┓ ┏━┓┏━┓ */
+/* ┃┗┫┣━┫┃┏┛┣┻┓┣━┫┣┳┛ */
+/* ╹ ╹╹ ╹┗┛ ┗━┛╹ ╹╹┗╸ */
+
+.navbar {
+    position: fixed;
+    list-style-type: none;
+    display: flex !important;
+    flex-wrap: nowrap;
+    gap: 1vw; /* gap between the flexbox items */
+    margin: 0px;
+    padding: 1vw; /* looks good when padding=gap */
+    padding-bottom: 1.5vw;
+    width: 98vw; /* have to take padding into account */
+    background-color: var(--nav-bg);
+    border-bottom: 0.3vw solid black;
+    border-radius: 1vw;
+}
+
+.navbar > .menu_item {
+    /* float: left; */
+    display: flex;
+    flex-grow: 2;
+    flex-shrink: 2;
+    justify-content: space-evenly;
+    background-color: var(--nav-item-bg);
+    border-radius: 1vw;
+    box-shadow: 0 0.7vw black;
+}
+
+.navbar > .menu_item:hover {
+    background-color: var(--nav-item-hover-bg);
+    transition-duration: 0.2s;
+}
+.navbar > .menu_item:hover > a {
+    color: var(--nav-item-hover-fg);
+    /* transition-duration: 0.2s; */
+    transition-duration: inherit;
+}
+
+
+.navbar > .menu_item:active {
+    background-color: var(--nav-item-active-bg);
+    transform: translateY(0.4vw) ;
+    box-shadow: 0 0.3vw;
+    transition-duration: 0.1s;
+}
+.navbar > .menu_item:active > a {
+    color: var(--nav-item-active-fg);
+}
+
+
+.navbar > .menu_item > a {
+    display: block;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 4vw;
+    font-family: "Lucida Console", "Courier", monospace;
+    color: var(--nav-item-fg);
+    background-color: inherit;
+}
+
+
+
+/* ┏━┓┏━┓╻     ┏━┓┏━╸┏━┓╻ ╻╻  ╺┳╸┏━┓ */
+/* ┗━┓┃┓┃┃     ┣┳┛┣╸ ┗━┓┃ ┃┃   ┃ ┗━┓ */
+/* ┗━┛┗┻┛┗━╸   ╹┗╸┗━╸┗━┛┗━┛┗━╸ ╹ ┗━┛ */
+
+.sql_result {
+    margin: 2vw;
+    padding: 1vw;
+    border: 2px solid black;
+    border-radius: 0.7vw;
+}
+
+
+.nom {
+    border: 2px solid black;
+}
+
+
+
