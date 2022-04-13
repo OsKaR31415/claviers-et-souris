@@ -10,7 +10,7 @@
 
     --background: darkgrey;
     --text-border: darkslateblue;
-    --text-bg: var(--nav-item-active-bg);
+    --text-bg: var(--background);
 
     --vivid-col: darkslateblue;
     --high-col: cadetblue;
@@ -19,14 +19,33 @@
     --smooth-col: slategray;
 
 
-    background-color: var(--background);
 }
 
 body {
-    overflow: hidden; /* hide scrollbars */
+    background-color: var(--background);
     margin: 0px;
     display: flex;
 }
+
+
+
+/* ⣏⡉ ⡇  ⣏⡉ ⢇⡸   ⣏⡱ ⣏⡱ ⡎⢱ ⣏⡱ ⣏⡉ ⣏⡱ ⢹⠁ ⡇ ⣏⡉ ⢎⡑ */
+/* ⠇  ⠧⠤ ⠧⠤ ⠇⠸   ⠇  ⠇⠱ ⠣⠜ ⠇  ⠧⠤ ⠇⠱ ⠸  ⠇ ⠧⠤ ⠢⠜ */
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    align: right;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+}
+
+
 
 /* ╺┳╸┏━╸╻ ╻╺┳╸   ┏━╸┏━┓┏┓╻╺┳╸┏━┓╻┏┓╻┏━╸┏━┓ *
  *  ┃ ┣╸ ┏╋┛ ┃    ┃  ┃ ┃┃┗┫ ┃ ┣━┫┃┃┗┫┣╸ ┣┳┛ *
@@ -47,7 +66,7 @@ body {
 .contents {
     margin: 2vw;
     padding: 1vw;
-    border: 2px solid black;
+    border: 4px solid black;
     border-radius: 0.7vw;
 }
 
@@ -93,9 +112,10 @@ h6 {
 
 form {
     display: block;
-    border: 2px solid black;
+    border: 4px solid black;
     border-radius: 0.7vw;
     padding: 1vw;
+    margin: 1vw;
     font-size: 20pt;
 }
 
@@ -114,6 +134,16 @@ input.submit {
     font-family: inherit;
     padding: 0.3vw;
     border-radius: 0.7vw;
+}
+
+.checkbox {
+    zoom: 1.3;
+    z-index: 0;
+}
+
+
+form > div.flex-container > div.small {
+    font-size: 12pt;
 }
 
 /* ┏┓╻┏━┓╻ ╻┏┓ ┏━┓┏━┓ */
@@ -185,17 +215,37 @@ input.submit {
 /* ┗━┓┃┓┃┃     ┣┳┛┣╸ ┗━┓┃ ┃┃   ┃ ┗━┓ */
 /* ┗━┛┗┻┛┗━╸   ╹┗╸┗━╸┗━┛┗━┛┗━╸ ╹ ┗━┛ */
 
-.sql_result {
-    margin: 2vw;
+
+.nb_resultats {
+    font-size: 2vw;
+}
+
+.keyboard {  /* container for the keyboard info */
+    display: flex;
+    flex-direction: column;
+    flex-gap: 6vw;
+    margin: 1vw;
     padding: 1vw;
-    border: 2px solid black;
+    border: 4px solid black;
     border-radius: 0.7vw;
 }
 
-
-.nom {
-    border: 2px solid black;
+.keyboard > .flex-row > .flex-column {
+    /* margin-right: 6vw; */
 }
 
+.keyboard > .flex-row > .flex-column > img {
+    width: 30vw;
+}
+
+.overline { /* for the properties that are false */
+    text-decoration: line-through;
+    color: #555;
+}
+
+
+.keyboard > .flex-row > .flex-column > .nom { /* name of the keyboard */
+    font-size: 25pt;
+}
 
 
