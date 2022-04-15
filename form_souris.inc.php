@@ -6,9 +6,9 @@
         <div> <!-- slider du nombre de prix -->
             <label for="prix">Prix : </label>
             <input type="range" name="prix" id="prix"
-            value="60" min="0" max="200" step="10"
+            value="0" min="0" max="200" step="10"
             oninput="this.nextElementSibling.value = this.value;"/>
-            <output>60</output>
+            <output>0</output>
             <label for="prix">€</label>
         </div>
 
@@ -16,6 +16,20 @@
         <div>
             <input type="checkbox" name="bluetooth">
             <label for="bluetooth">Bluetooth</label>
+        </div>
+
+        <div><br/><h3>Positionnement</h3></div>
+        <div>
+            <input type="radio" name="position" id="seule" value="seule" checked>
+            <label for="seule">Seule</label>
+        </div>
+        <div>
+            <input type="radio" name="position" id="sur_ordinateur" value="sur_ordinateur">
+            <label for="sur_ordinateur">Sur un <strong>ordinateur</strong></label>
+        </div>
+        <div>
+            <input type="radio" name="position" id="sur_clavier" value="sur_clavier">
+            <label for="sur_clavier">Sur un <strong>clavier</strong></label>
         </div>
 
         <div><br/></div>
@@ -53,7 +67,8 @@
 
         <div>
             <br/>
-            <input type="submit" class="submit" value="Rechercher"/>
+            <input type="submit" class="submit" name="action" value="Rechercher"/>
+            <input type="submit" class="submit" name="action" value="Tous les claviers"/>
         </div>
 
 
