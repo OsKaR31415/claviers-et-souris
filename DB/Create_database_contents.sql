@@ -119,16 +119,18 @@ VALUES
 -- ---------- --
 
 INSERT INTO
-`SOURIS`(nom,      marque,     prix,   trackball, trackpad, bluetooth, hlink)
-VALUES ('MX ergo', 'Logitech', 119.99, true,      false,    true,      'https://www.logitech.com/fr-fr/products/mice/mx-ergo-wireless-trackball-mouse.910-005179.html'),
-('ergo M575',      'Logitech', 49.99,  true,      false,    true,      'https://www.logitech.com/fr-fr/products/mice/m575-ergo-wireless-trackball.910-005872.html'),
-('signature M650', 'Logitech', 44.99,  false,     false,    true,      'https://www.logitech.com/fr-fr/products/mice/m650-signature-wireless-mouse.html'),
-('MX vertical',    'Logitech', 119.99, false,     false,    true,      'https://www.logitech.com/fr-fr/products/mice/mx-vertical-ergonomic-mouse.910-005448.html'),
-('MX master 3',    'Logitech', 129.99, false,     false,    true,      'https://www.logitech.com/fr-fr/products/mice/mx-master-3.910-005694.html'),
-('L-track',        'X-keys',   177,    true,      false,    false,     'https://www.x-keys-uk.com/products/x-keys-l-trac-red-trackball'),
-('Huge Trackball', 'Elecom',   53,     true,      false,    true,      'https://www.elecom.co.jp.e.gj.hp.transer.com/products/M-HT1DRBK.html'),
-('Magic trackpad', 'Apple',    135,    false,     true,     true,      'https://www.apple.com/fr/shop/product/MK2D3Z/A/magic-trackpad-surface-multi%E2%80%91touch-blanc'),
-('Touchpad T650',  'Logitech', 100,    false,     true,     false,      'https://www.logitech.com/assets/46475/2/wireless-rechargeable-touchpad-t650.pdf');
+`SOURIS`(nom,                     marque,      prix,   trackball, trackpad, bluetooth, hlink)
+VALUES ('MX ergo',                'Logitech',  119.99, true,      false,    true,      'https://www.logitech.com/fr-fr/products/mice/mx-ergo-wireless-trackball-mouse.910-005179.html'),
+('ergo M575',                     'Logitech',  49.99,  true,      false,    true,      'https://www.logitech.com/fr-fr/products/mice/m575-ergo-wireless-trackball.910-005872.html'),
+('signature M650',                'Logitech',  44.99,  false,     false,    true,      'https://www.logitech.com/fr-fr/products/mice/m650-signature-wireless-mouse.html'),
+('MX vertical',                   'Logitech',  119.99, false,     false,    true,      'https://www.logitech.com/fr-fr/products/mice/mx-vertical-ergonomic-mouse.910-005448.html'),
+('MX master 3',                   'Logitech',  129.99, false,     false,    true,      'https://www.logitech.com/fr-fr/products/mice/mx-master-3.910-005694.html'),
+('L-track',                       'X-keys',    177,    true,      false,    false,     'https://www.x-keys-uk.com/products/x-keys-l-trac-red-trackball'),
+('Huge Trackball',                'Elecom',    53,     true,      false,    true,      'https://www.elecom.co.jp.e.gj.hp.transer.com/products/M-HT1DRBK.html'),
+('Magic trackpad',                'Apple',     135,    false,     true,     true,      'https://www.apple.com/fr/shop/product/MK2D3Z/A/magic-trackpad-surface-multi%E2%80%91touch-blanc'),
+('Touchpad T650',                 'Logitech',  100,    false,     true,     false,     'https://www.logitech.com/assets/46475/2/wireless-rechargeable-touchpad-t650.pdf'),
+('Souris pour windows seulement', 'Micro$oft', 2568,   false,     false,    false,     'about:blank'),
+;
 
 
 -- ------------------------ --
@@ -136,28 +138,30 @@ VALUES ('MX ergo', 'Logitech', 119.99, true,      false,    true,      'https://
 -- ------------------------ --
 
 INSERT INTO
-`SOURIS_COMPATIBLE`(id_souris,                       os,        nom_driver)
-VALUES ((SELECT id FROM SOURIS WHERE nom='MX ergo'), 'Linux',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='MX ergo'),        'MacOS',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='MX ergo'),        'Windows', 'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='ergo M575'),      'Linux',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='ergo M575'),      'MacOS',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='ergo M575'),      'Windows', 'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='signature M650'), 'Linux',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='signature M650'), 'MacOS',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='signature M650'), 'Windows', 'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='MX master 3'),    'Linux',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='MX master 3'),    'MacOS',   'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='MX master 3'),    'Windows', 'Logi Options'),
-((SELECT id FROM SOURIS WHERE nom='L-track'),        'Linux',   NULL),
-((SELECT id FROM SOURIS WHERE nom='L-track'),        'MacOS',   NULL),
-((SELECT id FROM SOURIS WHERE nom='L-track'),        'Windows', NULL),
-((SELECT id FROM SOURIS WHERE nom='Huge Trackball'), 'Linux',   NULL),
-((SELECT id FROM SOURIS WHERE nom='Huge Trackball'), 'MacOS',   NULL),
-((SELECT id FROM SOURIS WHERE nom='Huge Trackball'), 'Windows', NULL),
-((SELECT id FROM SOURIS WHERE nom='Magic trackpad'), 'MacOS',   NULL),
-((SELECT id FROM SOURIS WHERE nom='Magic trackpad'), 'Windows', 'Magic Utilities'),
-((SELECT id FROM SOURIS WHERE nom='Touchpad T650'),  'Windows', 'Logi Options');
+`SOURIS_COMPATIBLE`(id_souris,                                     os,        nom_driver)
+VALUES ((SELECT id FROM SOURIS WHERE nom='MX ergo'),               'Linux',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='MX ergo'),                      'MacOS',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='MX ergo'),                      'Windows', 'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='ergo M575'),                    'Linux',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='ergo M575'),                    'MacOS',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='ergo M575'),                    'Windows', 'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='signature M650'),               'Linux',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='signature M650'),               'MacOS',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='signature M650'),               'Windows', 'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='MX master 3'),                  'Linux',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='MX master 3'),                  'MacOS',   'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='MX master 3'),                  'Windows', 'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='L-track'),                      'Linux',   NULL),
+((SELECT id FROM SOURIS WHERE nom='L-track'),                      'MacOS',   NULL),
+((SELECT id FROM SOURIS WHERE nom='L-track'),                      'Windows', NULL),
+((SELECT id FROM SOURIS WHERE nom='Huge Trackball'),               'Linux',   NULL),
+((SELECT id FROM SOURIS WHERE nom='Huge Trackball'),               'MacOS',   NULL),
+((SELECT id FROM SOURIS WHERE nom='Huge Trackball'),               'Windows', NULL),
+((SELECT id FROM SOURIS WHERE nom='Magic trackpad'),               'MacOS',   NULL),
+((SELECT id FROM SOURIS WHERE nom='Magic trackpad'),               'Windows', 'Magic Utilities'),
+((SELECT id FROM SOURIS WHERE nom='Touchpad T650'),                'Windows', 'Logi Options'),
+((SELECT id FROM SOURIS WHERE nom='Souris pour windows seulement', 'Windows', NULL))
+;
 
 
 
@@ -229,6 +233,7 @@ VALUES ('Clavier Kinesis sur portable', NULL,   NULL, 86,             false,    
 
 -- Positionnement des claviers --
 
+-- TODO: ajouter des claviers sur ordinateurs /MacBook(Pro)?/ --
 INSERT INTO `CLAVIER_SUR_ORDINATEUR`(id_clavier, id_ordi)
 VALUES
 ((SELECT id FROM CLAVIER WHERE nom='Clavier Kinesis sur portable'), (SELECT id FROM ORDINATEUR WHERE nom='Kinesis Laptop'));
