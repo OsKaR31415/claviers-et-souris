@@ -139,12 +139,12 @@ if (isset($_SESSION['query'])) {
     }
 
     $result = mysqli_query($mysqli, $query); // get the RESULTS OF THE QUERY
+    if ($result === true) {
+        echo "Nouveau clavier enregistré !";
+    } else {
+        echo "Error : " . $query . "<br/>" . $mysqli->error;
+    }
 
-    echo "<br/>";
-    echo "query results :";
-    echo $results;
-    echo "<br/>";
-    echo "query done";
 
     unset($_SESSION['query']);
 
