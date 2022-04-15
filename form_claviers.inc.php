@@ -94,7 +94,8 @@
 
         <div>
             <br/>
-            <input type="submit" class="submit" value="Rechercher"/>
+            <input type="submit" class="submit" name="action" value="Rechercher"/>
+            <input type="submit" class="submit" name="action" value="Tous les claviers"/>
         </div>
     </div>
 </form>
