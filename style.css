@@ -36,7 +36,6 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 3;
-    align: right;
 }
 
 .flex-row {
@@ -203,7 +202,7 @@ form > div.flex-container > div.small {
     padding: 8px;
     text-align: center;
     text-decoration: none;
-    font-size: 4vw;
+    font-size: 3vw;
     font-family: "Lucida Console", "Courier", monospace;
     color: var(--nav-item-fg);
     background-color: inherit;
@@ -215,10 +214,20 @@ form > div.flex-container > div.small {
 /* ┗━┓┃┓┃┃     ┣┳┛┣╸ ┗━┓┃ ┃┃   ┃ ┗━┓ */
 /* ┗━┛┗┻┛┗━╸   ╹┗╸┗━╸┗━┛┗━┛┗━╸ ╹ ┗━┛ */
 
-
 .nb_resultats {
     font-size: 2vw;
 }
+
+.line_through { /* for the properties that are false */
+    text-decoration: line-through;
+    /* text-decoration-thickness: 2px; */
+    /* text-decoration-color: darkred; */
+    color: #555;
+}
+
+
+/* ⣇⠜ ⣏⡉ ⢇⢸ ⣏⡱ ⡎⢱ ⣎⣱ ⣏⡱ ⡏⢱ ⢎⡑ */
+/* ⠇⠱ ⠧⠤  ⠇ ⠧⠜ ⠣⠜ ⠇⠸ ⠇⠱ ⠧⠜ ⠢⠜ */
 
 .keyboard {  /* container for the keyboard info */
     display: flex;
@@ -238,14 +247,56 @@ form > div.flex-container > div.small {
     width: 30vw;
 }
 
-.overline { /* for the properties that are false */
-    text-decoration: line-through;
-    color: #555;
-}
-
-
 .keyboard > .flex-row > .flex-column > .nom { /* name of the keyboard */
     font-size: 25pt;
 }
 
+
+
+.keyboard > .flex-row > .flex-column > .marque { /* name of the mouse */
+    font-size: 17pt;
+}
+
+.keyboard > .flex-row > .flex-column > .prix { /* name of the mouse */
+    text-decoration: underline;
+}
+
+
+
+/* ⡷⢾ ⡎⢱ ⡇⢸ ⢎⡑ ⣏⡉ ⢎⡑ */
+/* ⠇⠸ ⠣⠜ ⠣⠜ ⠢⠜ ⠧⠤ ⠢⠜ */
+
+
+.mouse {  /* container for the mouse info */
+    display: flex;
+    flex-direction: column;
+    flex-gap: 6vw;
+    margin: 1vw;
+    padding: 1vw;
+    border: 4px solid black;
+    border-radius: 0.7vw;
+}
+
+
+.mouse > .flex-row > .flex-column > img {
+    width: 30vw;
+}
+
+.mouse > .flex-row > .flex-column > .nom { /* mouse name */
+    font-size: 25pt;
+}
+
+
+.mouse > .flex-row > .flex-column > .marque { /* mouse brand */
+    font-size: 17pt;
+}
+
+.mouse > .flex-row > .flex-column > .prix { /* mouse price */
+    text-decoration: underline;
+}
+
+
+.mouse > .flex-row > .flex-column > .type { /* mouse type : trackball, trackpad, mouse */
+    font-weight: bold;
+}
 
