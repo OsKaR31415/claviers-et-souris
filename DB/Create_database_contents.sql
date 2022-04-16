@@ -35,7 +35,8 @@ VALUES ('Moonlander mark I',       'zsa',               328,    72,             
 ('X Bows Knight',                  'X Bows',            207,    86,             true,      true,  false,        true,     false,      false,    false,        false,     'https://x-bows.com/collections/mechanicalkeyboards/products/x-bows-knight-ergonomic-mechanical-keyboard'),
 ('X Bows Knight Plus',             'X Bows',            207,    108,            true,      true,  false,        true,     false,      false,    false,        false,     'https://x-bows.com/collections/mechanicalkeyboards/products/x-bows-knight-plus-ergonomic-mechanical-keyboard-with-magnetic-number-pad'),
 ('K860 ergo',                      'Logitech',          119,    111,            true,      true,  false,        false,    false,      false,    false,        true,      'https://www.logitech.com/fr-fr/ergo/k860-features.html'),
-('Type Matrix 2030',               'TypeMatrix',        100,    80,             true,      true,  false,        true,     true,       false,    false,        false,     'http://www.typematrix.com/2030/features.php')
+('Type Matrix 2030',               'TypeMatrix',        100,    80,             true,      true,  false,        true,     true,       false,    false,        false,     'http://www.typematrix.com/2030/features.php'),
+('Apple Adjustable',               'Apple',             NULL,   62,             true,      true,  false,        false,    false,      false,    false,        false,     'https://en.wikipedia.org/wiki/Apple_Adjustable_Keyboard'),
 ('rambi',                          NULL,                NULL,   23,             true,      true,  true,         true,     true,       false,    true,         true,      'https://github.com/rambip/splitboard');
 
 
@@ -171,26 +172,26 @@ VALUES ((SELECT id FROM SOURIS WHERE nom='MX ergo'),               'Linux',   'L
 
 INSERT INTO `SOURIS`(nom,                 marque,              trackball, trackpad, bluetooth)
 VALUES ('pour charybdis',                 'bastard keyboards', true,      false,    false),
-       ('pour charybdis nano',            'bastard keyboards', true,      false,    false),
-       ('pour maltron L90 dual hand',     'Maltron',           true,      false,    false),
-       ('pour Kodak Truform',             'adesso',            true,      false,    false),
-       ('pour Kodak Truform',             'adesso',            false,     true,     false),
-       ('pour Ultimate Hacking Keyboard', 'UHK',               true,      false,    false),
-       ('pour Ultimate Hacking Keyboard', 'UHK',               false,     true,     false);
+   ('pour charybdis nano',            'bastard keyboards', true,      false,    false),
+   ('pour maltron L90 dual hand',     'Maltron',           true,      false,    false),
+   ('pour Kodak Truform',             'adesso',            true,      false,    false),
+   ('pour Kodak Truform',             'adesso',            false,     true,     false),
+   ('pour Ultimate Hacking Keyboard', 'UHK',               true,      false,    false),
+   ('pour Ultimate Hacking Keyboard', 'UHK',               false,     true,     false);
 
 -- Positionnement des souris --
 
 -- l'attribut *position* doit être insérable dans la phrase :
 -- " souris intégrée au clavier, positionnée au *position*. "
 
-INSERT INTO `SOURIS_SUR_CLAVIER`(id_souris,                                                      id_clavier,                                                       position)
-VALUES ((SELECT id FROM `SOURIS` WHERE nom='pour charybdis'),                                    (SELECT id FROM `CLAVIER` WHERE nom='Charybdis'),                 'pouce gauche'),
-       ((SELECT id FROM `SOURIS` WHERE nom='pour charybdis nano'),                               (SELECT id FROM `CLAVIER` WHERE nom='Charybdis nano'),            'pouce gauche'),
-       ((SELECT id FROM `SOURIS` WHERE nom='pour maltron L90 dual hand'),                        (SELECT id FROM `CLAVIER` WHERE nom='Maltron L90 dual hand'),     'milieu'),
-       ((SELECT id FROM `SOURIS` WHERE nom='pour Kodak Truform' AND trackball=true),             (SELECT id FROM `CLAVIER` WHERE nom='Kodak Truform 3500'),        'milieu'),
-       ((SELECT id FROM `SOURIS` WHERE nom='pour Kodak Truform' AND trackpad=true),              (SELECT id FROM `CLAVIER` WHERE nom='Kodak Truform 3500'),        'milieu'),
-       ((SELECT id FROM `SOURIS` WHERE nom='pour Ultimate Hacking Keyboard' AND trackball=true), (SELECT id FROM `CLAVIER` WHERE nom='Ultimate Hacking Keyboard'), 'pouce droit'),
-       ((SELECT id FROM `SOURIS` WHERE nom='pour Ultimate Hacking Keyboard' AND trackpad=true),  (SELECT id FROM `CLAVIER` WHERE nom='Ultimate Hacking Keyboard'), 'pouce droit');
+INSERT INTO `SOURIS_SUR_CLAVIER`(id_souris,                                                  id_clavier,                                                       position)
+VALUES ((SELECT id FROM `SOURIS` WHERE nom='pour charybdis'),                                (SELECT id FROM `CLAVIER` WHERE nom='Charybdis'),                 'pouce gauche'),
+   ((SELECT id FROM `SOURIS` WHERE nom='pour charybdis nano'),                               (SELECT id FROM `CLAVIER` WHERE nom='Charybdis nano'),            'pouce gauche'),
+   ((SELECT id FROM `SOURIS` WHERE nom='pour maltron L90 dual hand'),                        (SELECT id FROM `CLAVIER` WHERE nom='Maltron L90 dual hand'),     'milieu'),
+   ((SELECT id FROM `SOURIS` WHERE nom='pour Kodak Truform' AND trackball=true),             (SELECT id FROM `CLAVIER` WHERE nom='Kodak Truform 3500'),        'milieu'),
+   ((SELECT id FROM `SOURIS` WHERE nom='pour Kodak Truform' AND trackpad=true),              (SELECT id FROM `CLAVIER` WHERE nom='Kodak Truform 3500'),        'milieu'),
+   ((SELECT id FROM `SOURIS` WHERE nom='pour Ultimate Hacking Keyboard' AND trackball=true), (SELECT id FROM `CLAVIER` WHERE nom='Ultimate Hacking Keyboard'), 'pouce droit'),
+   ((SELECT id FROM `SOURIS` WHERE nom='pour Ultimate Hacking Keyboard' AND trackpad=true),  (SELECT id FROM `CLAVIER` WHERE nom='Ultimate Hacking Keyboard'), 'pouce droit');
 
 
 
@@ -202,7 +203,9 @@ VALUES ((SELECT id FROM `SOURIS` WHERE nom='pour charybdis'),                   
 INSERT INTO `ORDINATEUR`(nom, marque,  prix)
 VALUES ('PowerBook 100',      'Apple', 2260),
 ('Macintosh Portable',        'Apple', 5880),
-('Kinesis Laptop',            NULL,    NULL);
+('Kinesis Laptop',            NULL,    NULL),
+('MacBookAir 2017',           'Apple', 400)
+;
 
 
 -- SOURIS SUR DES ORDINATEURS --
@@ -228,8 +231,11 @@ VALUES ((SELECT id FROM SOURIS WHERE nom='sur PowerBook 100'), (SELECT id FROM O
 
 -- TODO: ajouter différents claviers/trackpads des MacBookPro (butterfly, magic keyboard, ...) (trackpad, magic trackpad, ...)
 INSERT INTO
-CLAVIER(nom,                            marque, prix, nombre_touches, mécanique, split, deux_parties, columnar, orthogonal, manuform, programmable, bluetooth, hlink)
-VALUES ('Clavier Kinesis sur portable', NULL,   NULL, 86,             false,     true,  false,        true,     false,      false,    false,        false,     'http://xahlee.info/kbd/kinesis_laptop.html');
+CLAVIER(nom,                            marque,  prix, nombre_touches, mécanique, split, deux_parties, columnar, orthogonal, manuform, programmable, bluetooth, hlink)
+VALUES ('Clavier Kinesis sur portable', NULL,    NULL, 86,             false,     true,  false,        true,     false,      false,    false,        false,     'http://xahlee.info/kbd/kinesis_laptop.html'),
+('Clavier butterfly',                   'Apple', NULL, 79,             false,     false, false,        false,    false,      false,    false,        false,     'about:blank'),
+('')
+;
 
 -- Positionnement des claviers --
 
