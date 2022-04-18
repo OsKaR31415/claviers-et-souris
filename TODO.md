@@ -3,7 +3,7 @@
 
  - [x] Data from the DB in the pages
  - [x] 5 tables in the DB
- - [ ] form to add data to the DB (in progress)
+ - [-] form to add data to the DB (barely done)
  - [x] forms with specific, well defined formats
 
  - [ ] 8 html/php pages (add articles) (currently 5)
