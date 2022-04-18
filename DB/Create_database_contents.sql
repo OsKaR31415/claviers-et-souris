@@ -213,7 +213,8 @@ VALUES ('PowerBook 100',      'Apple', 2260),
 INSERT INTO `SOURIS`(nom,    marque,  trackball, trackpad, bluetooth)
 VALUES ('sur PowerBook 100', 'Apple', true,      false,    false),
 ('sur Macintosh Portable',   'Apple', true,      false,    false),
-('sur Kinesis Laptop',       NULL,    false,     true,     false);
+('sur Kinesis Laptop',       NULL,    false,     true,     false),
+('trackpad sur MakBookAir',  'Apple', false,     true,     false);
 
 
 -- Positionnement des souris --
@@ -222,7 +223,7 @@ INSERT INTO `SOURIS_SUR_ORDINATEUR`(id_souris,                 id_ordi)
 VALUES ((SELECT id FROM SOURIS WHERE nom='sur PowerBook 100'), (SELECT id FROM ORDINATEUR WHERE nom='PowerBook 100')),
 ((SELECT id FROM SOURIS WHERE nom='sur Macintosh Portable'),   (SELECT id FROM ORDINATEUR WHERE nom='Macintosh Portable')),
 ((SELECT id FROM SOURIS WHERE nom='sur Kinesis Laptop'),       (SELECT id FROM ORDINATEUR WHERE nom='Kinesis Laptop')),
-;
+((SELECT id FROM SOURIS WHERE nom='trackpad sur MakBookAir'),  (SELECT id FROM ORDINATEUR WHERE nom='MacBookAir 2017'));
 
 
 
@@ -233,15 +234,14 @@ VALUES ((SELECT id FROM SOURIS WHERE nom='sur PowerBook 100'), (SELECT id FROM O
 INSERT INTO
 CLAVIER(nom,                            marque,  prix, nombre_touches, mécanique, split, deux_parties, columnar, orthogonal, manuform, programmable, bluetooth, hlink)
 VALUES ('Clavier Kinesis sur portable', NULL,    NULL, 86,             false,     true,  false,        true,     false,      false,    false,        false,     'http://xahlee.info/kbd/kinesis_laptop.html'),
-('Clavier butterfly',                   'Apple', NULL, 79,             false,     false, false,        false,    false,      false,    false,        false,     'about:blank'),
-('')
-;
+('Clavier butterfly',                   'Apple', NULL, 79,             false,     false, false,        false,    false,      false,    false,        false,     'about:blank');
 
 -- Positionnement des claviers --
 
 -- TODO: ajouter des claviers sur ordinateurs /MacBook(Pro)?/ --
 INSERT INTO `CLAVIER_SUR_ORDINATEUR`(id_clavier, id_ordi)
 VALUES
-((SELECT id FROM CLAVIER WHERE nom='Clavier Kinesis sur portable'), (SELECT id FROM ORDINATEUR WHERE nom='Kinesis Laptop'));
+((SELECT id FROM CLAVIER WHERE nom='Clavier Kinesis sur portable'), (SELECT id FROM ORDINATEUR WHERE nom='Kinesis Laptop')),
+((SELECT id FROM CLAVIER WHERE nom='Clavier butterfly'), (SELECT id FROM ORDINATEUR WHERE nom='MacBookAir 2017'));
 
 
