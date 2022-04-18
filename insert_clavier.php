@@ -79,6 +79,8 @@ echo '</div>'; // end of row
 echo '</div>'; // end of .keyboard
 
 
+
+
 /* ⣏⡱ ⡇⢸ ⡇ ⡇  ⡏⢱   ⢎⡑ ⡎⢱ ⡇    ⡇ ⡷⣸ ⢎⡑ ⣏⡉ ⣏⡱ ⢹⠁   ⡎⢱ ⡇⢸ ⣏⡉ ⣏⡱ ⢇⢸ */
 /* ⠧⠜ ⠣⠜ ⠇ ⠧⠤ ⠧⠜   ⠢⠜ ⠣⠪ ⠧⠤   ⠇ ⠇⠹ ⠢⠜ ⠧⠤ ⠇⠱ ⠸    ⠣⠪ ⠣⠜ ⠧⠤ ⠇⠱  ⠇ */
 $query = "INSERT INTO `CLAVIER`(nom, marque, prix, nombre_touches, mécanique, split, deux_parties, columnar, orthogonal, manuform, programmable, bluetooth, hlink) VALUES (";
@@ -89,7 +91,7 @@ $query .= "'" . $_GET["nom"] . "', ";
 $query .= "'" . $_GET["marque"] . "', ";
 // prix
 if ($_GET["prix"] == "") { $query .= 'NULL, '; }
-else { $query .= $_GET["prix"]; }
+else { $query .= $_GET["prix"] . ', '; }
 // nombre_touches
 $query .= $_GET["nombre_touches"] . ', ';
 
@@ -125,6 +127,8 @@ echo $query;
 session_start();
 if (isset($_SESSION['query'])) {
 
+    $query = $_SESSION['query']; // revive the $query variable
+
     /* ⡎⠑ ⡎⢱ ⡷⣸ ⡷⣸ ⣏⡉ ⡎⠑ ⢹⠁   ⢹⠁ ⡎⢱   ⡏⢱ ⣎⣱ ⢹⠁ ⣎⣱ ⣏⡱ ⣎⣱ ⢎⡑ ⣏⡉ */
     /* ⠣⠔ ⠣⠜ ⠇⠹ ⠇⠹ ⠧⠤ ⠣⠔ ⠸    ⠸  ⠣⠜   ⠧⠜ ⠇⠸ ⠸  ⠇⠸ ⠧⠜ ⠇⠸ ⠢⠜ ⠧⠤ */
     // database variables
@@ -140,19 +144,19 @@ if (isset($_SESSION['query'])) {
 
     $result = mysqli_query($mysqli, $query); // get the RESULTS OF THE QUERY
     if ($result === true) {
-        echo "Nouveau clavier enregistré !";
+        echo "<br/>";
+        echo "<h5>Nouveau clavier enregistré !</h5>";
     } else {
         echo "Error : " . $query . "<br/>" . $mysqli->error;
     }
 
 
-    unset($_SESSION['query']);
+    unset($_SESSION['query']); // delete the variable
 
 } else { // when the used has not confirmed yet
-    // store the query in the session variables
-    $_SESSION['query'] = $query;
-    // show the confirm button
-    echo '<form action="insert_clavier.php" class="submit"> <input type="submit" name="action" value="Confirmer"> </form>';
+    $_SESSION['query'] = $query; // store the query in the session variables
+    // show the confirm button :
+    echo '<form action="insert_clavier.php"> <input type="submit" class="submit" name="action" value="Confirmer"> </form>';
 }
 
 ?>
