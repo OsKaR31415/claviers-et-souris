@@ -7,6 +7,10 @@
  - [x] forms with specific, well defined formats
 
  - [ ] 8 html/php pages (add articles) (currently 5)
+    - add "database information" page (number of keyboard by type)
+    - add 3 small articles about :
+        - ergonomic keyboards
+        - ergonomic mouses
 
  - [x] one unique css style file
  - [x] well defined css file
