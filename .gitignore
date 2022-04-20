@@ -1,5 +1,4 @@
 
-*.swp
+.*.swp
 DB/images/.DS_Store
 DB/images/clavier/.DS_Store
-*.swp
