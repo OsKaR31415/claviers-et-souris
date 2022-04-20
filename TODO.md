@@ -8,7 +8,7 @@
 
  - [ ] 8 html/php pages (add articles) (currently 5)
     - add "database information" page (number of keyboard by type)
-    - add 3 small articles about :
+    - add 2 small articles about :
         - ergonomic keyboards
         - ergonomic mouses
 
