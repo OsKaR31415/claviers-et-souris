@@ -13,10 +13,10 @@
     --text-bg: var(--background);
 
     --vivid-col: darkslateblue;
-    --high-col: cadetblue;
-    --medium-col: darkcyan;
-    --low-col: steelblue;
-    --smooth-col: slategray;
+    --high-col: darkcyan;
+    --medium-col: steelblue;
+    --low-col: slategray;
+    --smooth-col: darkslategrey;
 
 
 }
@@ -100,6 +100,51 @@ h5 {
 
 h6 {
     font-size: 15pt;
+}
+
+
+/* ⡇  ⡇ ⡷⣸ ⣇⠜ ⢎⡑   ⡇ ⡷⣸ ⢎⡑ ⡇ ⡏⢱ ⣏⡉   ⢹⠁ ⡇ ⢹⠁ ⡇  ⣏⡉ ⢎⡑ */
+/* ⠧⠤ ⠇ ⠇⠹ ⠇⠱ ⠢⠜   ⠇ ⠇⠹ ⠢⠜ ⠇ ⠧⠜ ⠧⠤   ⠸  ⠇ ⠸  ⠧⠤ ⠧⠤ ⠢⠜ */
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1:hover > a,
+h2:hover > a,
+h3:hover > a,
+h4:hover > a,
+h5:hover > a,
+h6:hover > a {
+    filter: brightness(1.1);
+    transition-duration: 0.2s;
+}
+
+
+/* ⡏⢱ ⣎⣱ ⢹⠁ ⣎⣱   ⢹⠁ ⣎⣱ ⣏⡱ ⡇  ⣏⡉ ⢎⡑ */
+/* ⠧⠜ ⠇⠸ ⠸  ⠇⠸   ⠸  ⠇⠸ ⠧⠜ ⠧⠤ ⠧⠤ ⠢⠜ */
+
+table {
+    border: 4px solid black;
+    border-radius: 0.7vw;
+    padding: 4px;
+    border-collapse: collapse;
+}
+
+table > tbody > tr > td,
+table > thead > tr > td {
+    border: 1px solid black;
+    margin: 0px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    /* background-color: red; */
 }
 
 
