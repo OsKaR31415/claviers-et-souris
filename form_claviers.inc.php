@@ -58,6 +58,10 @@
             <input type="checkbox" name="orthogonal" class="checkbox">
             <label for="orthogonal"> <strong>orthogonal</strong> (touches organisées en grille) </label>
         </div>
+        <div>
+            <input type="checkbox" name="manuform" class="checkbox">
+            <label for="manuform"> <strong>manuform</strong> (touches en 3D pour suivre la main) </label>
+        </div>
 
         <div><br/></div>
         <div>
