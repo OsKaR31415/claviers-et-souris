@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <title>Ergoscar - Articles</title>
 </head>
 <body>
+
+    <?php include('header.inc.php') ?>
 
     <div class="container">
         <div class="contents">
@@ -16,7 +19,7 @@
             </div>
 
             <div class="article_presentation">
-                <h2><a href="article_souris.php">Souris Ergonimiques</a></h2>
+                <h2><a href="article_souris.php">Souris Ergonomiques</a></h2>
                 Présentation des différents types de souris ergonomiques.
             </div>
 
