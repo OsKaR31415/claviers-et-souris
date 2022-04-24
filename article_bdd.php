@@ -13,7 +13,6 @@
             <h1>Information sur la base de données</h1>
             Voici quelques informations sur l'état actuel de la base de données.
 
-            <h3>Claviers</h3>
 
 <?php
 
@@ -59,7 +58,9 @@ function show_table_as_dict($key_col_title, $key_col_name, $values_col_title, $v
 }
 
 
-$query_nb_keybs_compatible_by_os = "SELECT os, COUNT(id_clavier) FROM CLAVIER_COMPATIBLE GROUP BY os;";
+echo "<h3>Claviers</h3>";
+
+$query_nb_keybs_compatible_by_os = "SELECT os, COUNT(id_clavier) FROM CLAVIER_COMPATIBLE GROUP BY os ORDER BY COUNT(id_clavier);";
 $nb_keybs_compatible_by_os = mysqli_query($mysqli, $query_nb_keybs_compatible_by_os);
 
 echo "<br/><br/>";
@@ -71,13 +72,16 @@ show_table_as_dict("OS", "os", "nombre de claviers compatibles", "COUNT(id_clavi
 echo "<br/><br/>";
 echo "<br/><br/>";
 
-$query_nb_mice_compatible_by_os = "SELECT os, COUNT(id_souris) FROM SOURIS_COMPATIBLE GROUP BY os;";
+
+echo "<h3>Souris</h3>";
+
+$query_nb_mice_compatible_by_os = "SELECT os, COUNT(id_souris) FROM SOURIS_COMPATIBLE GROUP BY os ORDER BY COUNT(id_souris);";
 $nb_mice_compatible_by_os = mysqli_query($mysqli, $query_nb_mice_compatible_by_os);
 
 echo "<br/><br/>";
-echo "Nombre de claviers compatibles à un OS donné :";
+echo "Nombre de souris compatibles à un OS donné :";
 echo "<br/><br/>";
-show_table_as_dict("OS", "os", "nombre de claviers compatibles", "COUNT(id_clavier)", $nb_keybs_compatible_by_os);
+show_table_as_dict("OS", "os", "nombre de souris compatibles", "COUNT(id_souris)", $nb_mice_compatible_by_os);
 
 
 echo "<br/><br/>";
