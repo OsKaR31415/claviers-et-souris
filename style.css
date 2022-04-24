@@ -8,7 +8,7 @@
     --nav-item-active-bg: #C3C1BD; /* bg color of navbar items when clicked */
     --nav-item-active-fg: #7362de;
 
-    --background: darkgrey;
+    --background: white;
     --text-border: darkslateblue;
     --text-bg: var(--background);
 
@@ -57,7 +57,7 @@ body {
     margin-top: 20px;
     display: inline-block;
     font-family: "Lucida Console", "Courier", monospace;
-    font-size: 13pt;
+    font-size: 15pt;
     background-color: var(--text-bg);
 }
 
@@ -75,31 +75,31 @@ body {
 
 h1 {
     color: var(--vivid-col);
-    font-size: 50pt;
+    font-size: 55pt;
 }
 
 h2 {
     color: var(--high-col);
-    font-size: 35pt;
+    font-size: 40pt;
 }
 
 h3 {
     color: var(--medium-col);
-    font-size: 30pt;
+    font-size: 35pt;
 }
 
 h4 {
     color: var(--low-col);
-    font-size: 25pt;
+    font-size: 30pt;
 }
 
 h5 {
     color: var(--smooth-col);
-    font-size: 20pt;
+    font-size: 25pt;
 }
 
 h6 {
-    font-size: 15pt;
+    font-size: 20pt;
 }
 
 
@@ -122,7 +122,7 @@ h3:hover > a,
 h4:hover > a,
 h5:hover > a,
 h6:hover > a {
-    filter: brightness(1.1);
+    filter: brightness(1.4);
     transition-duration: 0.2s;
 }
 
