@@ -1,4 +1,6 @@
 
+<!-- Foo file to test title and text style, and to have some test text for the responsiveness -->
+
 <h1>Title</h1>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy eirmod tempor incididunt ut labore et</p>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy eirmod tempor incididunt ut labore et</p>
