@@ -23,8 +23,6 @@
                 <li><a href="souris.php">Une page pour rechercher des souris par critères</a></li>
                 <li><a href="ajouter.php">Une page pour ajouter un clavier qui n'est pas déjà dans la base de données</a></li>
             </ul>
-            <!-- foo text to test headers style -->
-            <!-- <?php include("lorem_ipsum.inc.php"); ?> -->
 
         </div>
     </div>
