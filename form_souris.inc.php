@@ -3,6 +3,7 @@
 <form action="souris.php" method="get">
     <div class="flex-container">
 
+        <div><h3>Trier par</h3></div>
         <div> <!-- slider du nombre de prix -->
             <label for="prix">Prix : </label>
             <input type="range" name="prix" id="prix"
