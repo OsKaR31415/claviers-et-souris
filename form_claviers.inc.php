@@ -4,7 +4,7 @@
 <form action="claviers.php" method="get">
     <div class="flex-container">
 
-        <h3>Trier par :</h3>
+        <h3>Trier par</h3>
         <div> <!-- sélection du type de tri (par prix / par nombre de touches) -->
             <input type="radio"
             name="prix_ou_nb_touches" id="select_prix" value="prix"
