@@ -1,6 +1,9 @@
 # claviers-et-souris
 site sur les claviers et les souris ergonomiques
 
+Le projet complet est disponible sur GitHub : [OsKaR31415/claviers-et-souris](https://OsKaR31415/claviers-et-souris)
+
+
 
 ## Plan du site
 Voici le plan du site :
